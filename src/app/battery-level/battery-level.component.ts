@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { BatteryLevelService } from '../battery-level.service';
 import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
-
+//A Coomet for fun
 @Component({
   selector: 'ble-battery-level',
   template: `
