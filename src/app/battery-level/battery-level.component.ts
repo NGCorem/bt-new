@@ -103,7 +103,7 @@ var btnSave = document.querySelector('#addToHome') as HTMLElement;
 
     window.addEventListener('beforeinstallprompt', (e)=> {
       console.log('beforeinstallprompt Event fired');
-      //e.preventDefault();   //I even try with this uncommented no luck so far
+      e.preventDefault();   //I even try with this uncommented no luck so far
       btnSave.style.display = 'block';
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
