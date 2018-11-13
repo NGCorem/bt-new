@@ -5,7 +5,15 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
 @Component({
   selector: 'ble-battery-level',
   template: `
-    <a href="#" (click)="getBatteryLevel()">Get Battery Level ({{batteryLevel || 'N/A'}}%)</a>
+  <mat-card class='control-card'>
+    <mat-card-header>
+      <mat-card-title>Controls</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <button mat-button color="primary" href="#" (click)="getBatteryLevel()">({{batteryLevel || 'N/A'}}%)</a>
+      <mat-slide-toggle class='toggle1'>Toggle 1</mat-slide-toggle>
+    </mat-card-content>
+  </mat-card>
   `,
   styles: [`
     a {

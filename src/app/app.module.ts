@@ -7,6 +7,10 @@ import { WebBluetoothModule } from '@manekinekko/angular-web-bluetooth';
 import { BatteryLevelComponent } from './battery-level/battery-level.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule, MatButtonModule } from '@angular/material';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 //Comment
 
 @NgModule({
@@ -17,6 +21,10 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatSlideToggleModule,
+    MatButtonModule,
     WebBluetoothModule.forRoot({
       enableTracing: true
     }),
