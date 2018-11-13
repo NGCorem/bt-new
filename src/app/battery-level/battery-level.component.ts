@@ -54,15 +54,15 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
     }
     .control-card {
       position: relative;
-      left: 33%;
       top: 30px;
-      height: 500px;
+      height: 95%;
       width: 33%;
       min-width: 300px;
     }
 
     .main-wrapper {
-      height: 1000px;
+      width: 100%;
+      height: 100%;
       background-color: rgb(242, 242, 242);
     }
 
