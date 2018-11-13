@@ -19,11 +19,11 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
       </table>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button class="mat-button" name="addToHome" id="addToHome" class="addToHome">
-        INSTALL
-        </button>
         <button mat-button class="mat-button" (click)="getBatteryLevel()">
           ADD DEVICE
+        </button>
+        <button mat-button class="mat-button" name="addToHome" id="addToHome" class="addToHome">
+        INSTALL
         </button>
       </mat-card-actions>
     </mat-card>
@@ -77,6 +77,10 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
     mat-slide-toggle {
       text-align: left !important;
     }
+
+    #addToHome {
+      display: none;
+    }
   `],
   providers: [ BatteryLevelService ]
 })
@@ -94,13 +98,13 @@ export class BatteryLevelComponent implements OnInit {
       this.getDeviceStatus();
       this.streamValues();
 
-var deferredPrompt;
-var btnSave = document.querySelectorAll('.addToHome')[0];
+let deferredPrompt;
+var btnSave = document.querySelector('#addToHome') as HTMLElement;
 
-    window.addEventListener('beforeinstallprompt', function(e) {
+    window.addEventListener('beforeinstallprompt', (e)=> {
       console.log('beforeinstallprompt Event fired');
       //e.preventDefault();   //I even try with this uncommented no luck so far
-
+      btnSave.style.display = 'block';
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
 
