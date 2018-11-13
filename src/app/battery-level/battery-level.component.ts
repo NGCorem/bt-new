@@ -58,6 +58,7 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
       top: 30px;
       height: 500px;
       width: 33%;
+      min-width: 300px;
     }
 
     .main-wrapper {
