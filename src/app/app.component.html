@@ -1,9 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <button name="addToHome" id="addToHome" class="addToHome">Add To Homescreen</button> 
+  <mat-toolbar color='primary'>
+    <mat-toolbar-row>
+ 		<span>{{ title }}</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
   <ble-battery-level></ble-battery-level>
 
 </div>

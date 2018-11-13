@@ -10,6 +10,9 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule, MatButtonModule } from '@angular/material';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatRippleModule} from '@angular/material/core';
 
 //Comment
 
@@ -22,9 +25,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
     MatCardModule,
     MatSlideToggleModule,
     MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
     WebBluetoothModule.forRoot({
       enableTracing: true
     }),

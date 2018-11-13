@@ -5,15 +5,29 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
 @Component({
   selector: 'ble-battery-level',
   template: `
-  <mat-card class='control-card'>
-    <mat-card-header>
-      <mat-card-title>Controls</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <button mat-button color="primary" href="#" (click)="getBatteryLevel()">({{batteryLevel || 'N/A'}}%)</a>
-      <mat-slide-toggle class='toggle1'>Toggle 1</mat-slide-toggle>
-    </mat-card-content>
-  </mat-card>
+  <div class='main-wrapper'>
+    <mat-card class='control-card'>
+      <mat-card-header>
+        <mat-card-title>Controls</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+      <table>
+          <tr><td><button mat-fab color="primary" href="#" >({{batteryLevel || 'N/A'}}%)</button><span> Battery Level</span></td></tr>
+          <tr><td><mat-slide-toggle class='toggle1'>Toggle 1</mat-slide-toggle></td></tr>
+          <tr><td><mat-slide-toggle class='toggle2'>Toggle 2</mat-slide-toggle></td></tr>
+          <tr><td><mat-slide-toggle class='toggle3'>Toggle 3</mat-slide-toggle></td></tr>
+      </table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button class="mat-button" name="addToHome" id="addToHome" class="addToHome">
+        INSTALL
+        </button>
+        <button mat-button class="mat-button" (click)="getBatteryLevel()">
+          ADD DEVICE
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
   `,
   styles: [`
     a {
@@ -37,6 +51,30 @@ import { BluetoothCore } from '@manekinekko/angular-web-bluetooth';
       box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
       position: relative;
       top: 6px;
+    }
+    .control-card {
+      position: relative;
+      left: 33%;
+      top: 30px;
+      height: 500px;
+      width: 33%;
+    }
+
+    .main-wrapper {
+      height: 1000px;
+      background-color: rgb(242, 242, 242);
+    }
+
+    td {
+      padding: 10px;
+    }
+    
+    table {
+      margin: 20px;
+    }
+
+    mat-slide-toggle {
+      text-align: left !important;
     }
   `],
   providers: [ BatteryLevelService ]
